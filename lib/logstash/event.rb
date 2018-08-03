@@ -5,7 +5,7 @@ require "logstash/namespace"
 require "logstash/util/fieldreference"
 
 # Use a custom serialization for jsonifying Time objects.
-class TimePatch
+module TimePatch
   refine Time do
     def to_json(*args)
       return iso8601(3).to_json(*args)
